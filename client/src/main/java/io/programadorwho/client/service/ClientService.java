@@ -1,6 +1,7 @@
 package io.programadorwho.client.service;
 
 import io.programadorwho.client.entity.Client;
+import io.programadorwho.client.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,15 +11,15 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class ClientService {
-    private final ClientService clientService;
+    private final ClientRepository clientRepository;
 
     @Transactional
     public Client save(Client client){
-        return clientService.save(client);
+        return clientRepository.save(client);
     }
 
     public Optional<Client> getByCpf(String cpf){
-        return clientService.getByCpf(cpf);
+        return clientRepository.findByCpf(cpf);
     }
 
 }

@@ -1,6 +1,5 @@
-package io.programadorwho.client.Resource;
+package io.programadorwho.client.resource;
 
-import io.programadorwho.client.entity.Client;
 import io.programadorwho.client.entity.dto.ClientSaveRequest;
 import io.programadorwho.client.service.ClientService;
 import lombok.RequiredArgsConstructor;
