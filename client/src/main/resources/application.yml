@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: client
+
+server:
+  port: 0 # UP RANDOM PORT
+
+# On which server will i register
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
