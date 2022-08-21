@@ -13,7 +13,7 @@ public class RoomClientService {
 
     private final RoomClientRepository roomClientRepository;
 
-    public List<RoomClient> listRoomByClient(String cpf) {
+    public List<RoomClient> listRoomByCpf(String cpf) {
         return roomClientRepository.findByCpf(cpf);
     }
 }
