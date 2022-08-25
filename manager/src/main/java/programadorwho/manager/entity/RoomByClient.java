@@ -1,12 +1,14 @@
 package programadorwho.manager.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class RoomByClient {
     private ClientData clientData;
     private List<RoomClientData> roomClientDataList;
