@@ -36,9 +36,11 @@ public class RoomResource {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @PostMapping
+    @PostMapping(value = "client-room")
     public ResponseEntity registerClientRoom(@RequestBody RoomByClientSaveRequest request) {
-        RoomClient roomClient = request.toModel();
+        Room room = roomService.getRoomByNumber(request.getNumber());
+
+        RoomClient roomClient = new RoomClient(request.getCpf(), room);
         roomClientService.save(roomClient);
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
