@@ -20,4 +20,9 @@ public class RoomClient {
     private Room room;
 
     private String cpf;
+
+    public RoomClient(String cpf, Room room){
+        this.cpf = cpf;
+        this.room = room;
+    }
 }

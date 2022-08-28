@@ -1,6 +1,7 @@
 package com.example.hotel.Resource;
 
 import com.example.hotel.dto.RoomByClientResponse;
+import com.example.hotel.dto.RoomByClientSaveRequest;
 import com.example.hotel.dto.RoomSaveRequest;
 import com.example.hotel.entity.Room;
 import com.example.hotel.entity.RoomClient;
@@ -23,26 +24,34 @@ public class RoomResource {
     private final RoomClientService roomClientService;
 
     @GetMapping
-    public String status(){
+    public String status() {
         return "OK";
     }
 
     @PostMapping
-    public ResponseEntity register(@RequestBody RoomSaveRequest request){
+    public ResponseEntity register(@RequestBody RoomSaveRequest request) {
         Room room = request.toModel();
         roomService.save(room);
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    @PostMapping
+    public ResponseEntity registerClientRoom(@RequestBody RoomByClientSaveRequest request) {
+        RoomClient roomClient = request.toModel();
+        roomClientService.save(roomClient);
+
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
     @GetMapping(params = "number")
-    public ResponseEntity<Room> getRoomByNumber(@RequestParam("number") int number){
+    public ResponseEntity<Room> getRoomByNumber(@RequestParam("number") int number) {
         Room room = roomService.getRoomByNumber(number);
         return ResponseEntity.ok(room);
     }
 
     @GetMapping(params = "cpf")
-    public ResponseEntity<List<RoomByClientResponse>> getRoomByClient(@RequestParam("cpf") String cpf){
+    public ResponseEntity<List<RoomByClientResponse>> getRoomByClient(@RequestParam("cpf") String cpf) {
         List<RoomClient> roomClientList = roomClientService.listRoomByCpf(cpf);
 
         List<RoomByClientResponse> roomByClientResponseList = roomClientList.stream()
