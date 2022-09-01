@@ -2,7 +2,7 @@ package com.example.managerhotel.application.exception;
 
 import lombok.Getter;
 
-public class ErrorCommMicroServiceException extends Exception{
+public class ErrorCommMicroServiceException extends Exception {
     @Getter
     private final Integer status;
 
