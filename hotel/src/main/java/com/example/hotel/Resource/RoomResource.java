@@ -46,7 +46,7 @@ public class RoomResource {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping(params = "number")
+    @GetMapping(value = "number")
     public ResponseEntity<Room> getRoomByNumber(@RequestParam("number") int number) {
         Room room = roomService.getRoomByNumber(number);
         return ResponseEntity.ok(room);
