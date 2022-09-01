@@ -63,4 +63,10 @@ public class RoomResource {
         return ResponseEntity.ok(roomByClientResponseList);
     }
 
+    @GetMapping(value = "free")
+    public ResponseEntity<List<Room>> getRoomFree(){
+        List<Room> roomList = roomService.getRoomsFree();
+        return ResponseEntity.ok(roomList);
+    }
+
 }

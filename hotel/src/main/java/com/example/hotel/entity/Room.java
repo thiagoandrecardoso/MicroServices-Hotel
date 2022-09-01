@@ -20,9 +20,11 @@ public class Room {
 
     private int number;
     private double price;
+    private boolean isOccupied;
 
-    public Room(int number, double price) {
+    public Room(int number, double price, boolean isOccupied) {
         this.number = number;
         this.price = price;
+        this.isOccupied = isOccupied;
     }
 }
