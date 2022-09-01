@@ -23,11 +23,6 @@ public class RoomResource {
     private final RoomService roomService;
     private final RoomClientService roomClientService;
 
-    @GetMapping
-    public String status() {
-        return "OK";
-    }
-
     @PostMapping
     public ResponseEntity register(@RequestBody RoomSaveRequest request) {
         Room room = request.toModel();
