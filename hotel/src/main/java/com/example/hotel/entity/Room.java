@@ -22,9 +22,9 @@ public class Room {
     private double price;
     private boolean isOccupied;
 
-    public Room(int number, double price, boolean isOccupied) {
+    public Room(int number, double price) {
         this.number = number;
         this.price = price;
-        this.isOccupied = isOccupied;
+        this.isOccupied = false;
     }
 }

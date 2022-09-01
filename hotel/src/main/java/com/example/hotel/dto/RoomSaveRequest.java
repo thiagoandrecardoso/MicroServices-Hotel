@@ -9,9 +9,8 @@ import lombok.Setter;
 public class RoomSaveRequest {
     private int number;
     private double price;
-    private boolean isOccupied;
 
-    public Room toModel(){
-        return new Room(number, price, isOccupied);
+    public Room toModel() {
+        return new Room(number, price);
     }
 }

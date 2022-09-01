@@ -34,6 +34,7 @@ public class RoomResource {
     @PostMapping(value = "client-room")
     public ResponseEntity registerClientRoom(@RequestBody RoomByClientSaveRequest request) {
         Room room = roomService.getRoomByNumber(request.getNumber());
+        room.setOccupied(true);
 
         RoomClient roomClient = new RoomClient(request.getCpf(), room);
         roomClientService.save(roomClient);
