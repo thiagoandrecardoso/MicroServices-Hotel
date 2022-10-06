@@ -27,7 +27,8 @@ public class ClientResource {
     public ResponseEntity dataClient(@RequestParam("cpf") String cpf){
         var client = clientService.getByCpf(cpf);
         if (client.isEmpty()){
-            return ResponseEntity.notFound().build();
+            final ResponseEntity<Object> build = ResponseEntity.notFound().build();
+            return build;
         }
         return ResponseEntity.ok(client);
     }
