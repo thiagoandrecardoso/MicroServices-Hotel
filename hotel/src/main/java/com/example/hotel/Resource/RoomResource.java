@@ -8,10 +8,13 @@ import com.example.hotel.entity.RoomClient;
 import com.example.hotel.service.RoomClientService;
 import com.example.hotel.service.RoomService;
 import lombok.RequiredArgsConstructor;
+import org.springdoc.core.customizers.ServerBaseUrlCustomizer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,7 +31,12 @@ public class RoomResource {
         Room room = request.toModel();
         roomService.save(room);
 
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        URI headerLocation = ServletUriComponentsBuilder.fromCurrentRequest()
+                .query("number={}number")
+                .buildAndExpand(request.getNumber())
+                .toUri();
+
+        return ResponseEntity.created(headerLocation).build();
     }
 
     @PostMapping(value = "client-room")
@@ -39,7 +47,12 @@ public class RoomResource {
         RoomClient roomClient = new RoomClient(request.getCpf(), room);
         roomClientService.save(roomClient);
 
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        URI headerLocation = ServletUriComponentsBuilder.fromCurrentRequest()
+                .query("cpf={cpf}")
+                .buildAndExpand(request.getCpf())
+                .toUri();
+
+        return ResponseEntity.created(headerLocation).build();
     }
 
     @GetMapping(value = "number")
