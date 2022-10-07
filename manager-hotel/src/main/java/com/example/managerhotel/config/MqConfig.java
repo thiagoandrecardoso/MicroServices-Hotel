@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MqConfig {
 
-    @Value("${mq.queues.request-room}")
+    @Value("${mq.queues.cursomsrabbitmq}")
     private String requestRoomMq;
 
     @Bean

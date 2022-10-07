@@ -19,7 +19,7 @@ public class ReceiveRoomRequest {
     private final RoomService roomService;
     private final RoomClientService roomClientService;
 
-    @RabbitListener(queues = "${mq.queues.request-room}")
+    @RabbitListener(queues = "${mq.queues.cursomsrabbitmq}")
     public void receiveRoom(@Payload String payload) {
         var mapper = new ObjectMapper();
 

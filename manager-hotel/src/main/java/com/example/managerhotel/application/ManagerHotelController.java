@@ -35,7 +35,8 @@ public class ManagerHotelController {
         }
     }
 
-    @PostMapping(value = "request-room")
+
+    @PostMapping(value = "cursomsrabbitmq")
     public ResponseEntity requestRoom(@RequestBody DataRequestRoom dataRequestRoom) {
         try {
             ProtocolRequestRoom protocol = managerHotelService.getProtocolRequestRoom(dataRequestRoom);
