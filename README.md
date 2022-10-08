@@ -12,9 +12,9 @@ Estudo sobre arquitetura de microserviços.
 	- cliendID: keyclockclient
 	- Valid redirect URIs: http://localhost:8080
 	- Client authentication (ON)
-	[X] Standard flow
-	[X] Direct access grants
-	[X] Service accounts roles
+	- Standard flow (X)
+	- Direct access grants (x)
+	- Service accounts roles (x)
 	- Logout settings:
 		- Front channel logout (ON)
 		- Backchannel logout session required (ON)
@@ -29,5 +29,5 @@ Estudo sobre arquitetura de microserviços.
 		- CLICK endpoints -> OpenID Endpoint Configuration 
 
 		PHOTO:
-		 
+	
 
