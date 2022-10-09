@@ -30,6 +30,9 @@ Estudo sobre arquitetura de microserviços.
 
 		PHOTO:
 ![Alt text](/image/image1.png "Image 01")
-![Alt text](/image/clientid.png "Image 02")
+![Alt text](/image/clientid.png "clientid")
+![Alt text](/image/secret.png "secret")
+![Alt text](/image/gettoken.png "gettoken")
+![Alt text](/image/copytoken.png "copytoken")
 	
 
