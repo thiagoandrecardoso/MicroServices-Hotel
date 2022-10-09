@@ -29,7 +29,7 @@ Estudo sobre arquitetura de microserviços.
 		- CLICK endpoints -> OpenID Endpoint Configuration 
 
 		PHOTO:
-			![Alt text](/image/image1.png "Image 01")
-			![Alt text](/image/clientid.png "Image 02")
+![Alt text](/image/image1.png "Image 01")
+![Alt text](/image/clientid.png "Image 02")
 	
 
