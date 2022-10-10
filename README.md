@@ -20,6 +20,8 @@ Estudo sobre arquitetura de microserviços.
 		- Backchannel logout session required (ON)
 
 	- SAVE!!!
+	
+### Site to verify TOKEN: https://jwt.io
 
 - INSONMIA OR POSTMAN:
 	- Created GET
