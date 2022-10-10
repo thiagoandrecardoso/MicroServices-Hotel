@@ -8,6 +8,8 @@ Estudo sobre arquitetura de microserviços.
 
 ### Step by step (Ooh baby):
 
+"remember to open Docker"
+
 - Created a new Client
 	- cliendID: keyclockclient
 	- Valid redirect URIs: http://localhost:8080
