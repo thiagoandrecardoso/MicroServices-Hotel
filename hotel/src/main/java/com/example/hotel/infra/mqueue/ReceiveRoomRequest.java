@@ -27,15 +27,18 @@ public class ReceiveRoomRequest {
             DataRequestRoom dataRequestRoom = mapper.readValue(payload, DataRequestRoom.class);
             Room room = roomService.getRoomByNumber(dataRequestRoom.getNumber());
 
-            if (room.isOccupied()) throw new RoomIsOccupiedException();
+            if (room != null) {
+                if (room.isOccupied()) throw new RoomIsOccupiedException();
 
-            room.setOccupied(true);
-            roomService.save(room);
+                room.setOccupied(true);
+                roomService.save(room);
 
-            RoomClient roomClient = new RoomClient(dataRequestRoom.getCpf(), room);
-            roomClientService.save(roomClient);
+                RoomClient roomClient = new RoomClient(dataRequestRoom.getCpf(), room);
+                roomClientService.save(roomClient);
+            }
+
         } catch (JsonProcessingException | RoomIsOccupiedException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
