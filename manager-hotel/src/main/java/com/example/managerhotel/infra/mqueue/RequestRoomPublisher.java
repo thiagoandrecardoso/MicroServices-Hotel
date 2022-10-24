@@ -15,7 +15,7 @@ public class RequestRoomPublisher {
     private final Queue queueRequestRoom;
 
     public void sendsRoomRequest(DataRequestRoom dataRequestRoom) throws JsonProcessingException {
-        var json =convertIntoJson(dataRequestRoom);
+        var json = convertIntoJson(dataRequestRoom);
         rabbitTemplate.convertAndSend(queueRequestRoom.getName(), json);
     }
 

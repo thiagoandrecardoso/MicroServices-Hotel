@@ -2,6 +2,7 @@ package com.example.managerhotel.application;
 
 import com.example.managerhotel.application.exception.DataClientNotFoundException;
 import com.example.managerhotel.application.exception.ErrorCommMicroServiceException;
+import com.example.managerhotel.application.exception.ErrorRequestRoomException;
 import com.example.managerhotel.domain.model.*;
 import com.example.managerhotel.infra.clients.HostResourceClient;
 import com.example.managerhotel.infra.clients.RoomResourceClient;
@@ -50,8 +51,8 @@ public class ManagerHotelService {
             requestRoomPublisher.sendsRoomRequest(dataRequestRoom);
             var protocol = UUID.randomUUID().toString();
             return new ProtocolRequestRoom(protocol);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new ErrorRequestRoomException(e.getMessage());
         }
     }
 
