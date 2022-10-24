@@ -8,8 +8,6 @@ import com.example.hotel.entity.RoomClient;
 import com.example.hotel.service.RoomClientService;
 import com.example.hotel.service.RoomService;
 import lombok.RequiredArgsConstructor;
-import org.springdoc.core.customizers.ServerBaseUrlCustomizer;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
