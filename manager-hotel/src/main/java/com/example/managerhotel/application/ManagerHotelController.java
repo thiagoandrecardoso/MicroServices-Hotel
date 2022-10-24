@@ -36,7 +36,7 @@ public class ManagerHotelController {
     }
 
 
-    @PostMapping(value = "cursomsrabbitmq")
+    @PostMapping(value = "request-room")
     public ResponseEntity requestRoom(@RequestBody DataRequestRoom dataRequestRoom) {
         try {
             ProtocolRequestRoom protocol = managerHotelService.getProtocolRequestRoom(dataRequestRoom);
@@ -44,7 +44,6 @@ public class ManagerHotelController {
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(e.getMessage());
         }
-
     }
 
 }
