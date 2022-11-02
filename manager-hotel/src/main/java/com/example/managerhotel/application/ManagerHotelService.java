@@ -7,7 +7,6 @@ import com.example.managerhotel.domain.model.*;
 import com.example.managerhotel.infra.clients.HostResourceClient;
 import com.example.managerhotel.infra.clients.RoomResourceClient;
 import com.example.managerhotel.infra.mqueue.RequestRoomPublisher;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpStatus;
@@ -19,7 +18,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class ManagerHotelService {
+public class ManagerHotelService {    
 
     private final HostResourceClient hostResourceClient;
     private final RoomResourceClient roomResourceClient;
