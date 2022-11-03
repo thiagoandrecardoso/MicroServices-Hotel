@@ -9,12 +9,14 @@ import com.example.hotel.service.RoomService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class ReceiveRoomRequest {
     private final RoomService roomService;
     private final RoomClientService roomClientService;
@@ -38,7 +40,7 @@ public class ReceiveRoomRequest {
             }
 
         } catch (JsonProcessingException | RoomIsOccupiedException e) {
-            e.printStackTrace();
+           log.error("Error when receiving room issue request: {}", e.getMessage());
         }
     }
 }
